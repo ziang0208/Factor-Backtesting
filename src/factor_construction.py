@@ -94,6 +94,8 @@ def process_and_save_factors(factor_name, process_func, window=5):
     # 按日期分组，保存到相应的CSV文件中
     for date_tuple, group in all_data.group_by("date"):
         date_string = date_tuple[0]  # date_tuple 是一个元组，取第一个元素
+        # 删除 date 列
+        group = group.drop("date")
         group.write_csv(os.path.join(factor_folder, f"{date_string}.csv"))
 
 # 主函数

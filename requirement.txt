@@ -1,1 +1,1 @@
-tqdm matplotlib pandas numpy polars
+tqdm matplotlib pandas numpy polars statsmodels
